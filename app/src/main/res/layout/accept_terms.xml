@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@+id/terms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@android:color/holo_blue_dark">
+
+        <ImageButton
+            android:id="@+id/info_logo_"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/ripple"
+            android:scaleType="fitCenter"
+            android:src="@drawable/info"
+            android:tint="#6aaa" />
+
+        <TextView
+            android:id="@+id/terms_"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_toEndOf="@+id/info_logo_"
+            android:text="@string/terms"
+            android:textColor="@android:color/white" />
+
+        <CheckBox
+            android:id="@+id/accept_terms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/terms_"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="10dp"
+            android:checked="false"
+            android:onClick="onClick"
+            android:text="@string/accept" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/tips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@android:color/holo_blue_dark">
+
+        <Switch
+            android:id="@+id/screenTips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:checked="true"
+            android:onClick="onClick"
+            android:text="@string/discover_the_app_with_screen_tips" />
+
+        <CheckBox
+            android:id="@+id/restartTips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screenTips"
+            android:layout_alignParentEnd="true"
+            android:checked="false"
+            android:onClick="onClick"
+            android:text="@string/restart_screen_tips"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/info_logo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/restartTips"
+            android:layout_margin="5dp"
+            android:background="@drawable/ripple"
+            android:scaleType="fitCenter"
+            android:src="@drawable/info"
+            android:tint="#6aaa" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/restartTips"
+            android:layout_margin="5dp"
+            android:layout_toEndOf="@+id/info_logo"
+            android:text="@string/screen_tip"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+
+    <include layout="@layout/req_permission" />
+</merge>

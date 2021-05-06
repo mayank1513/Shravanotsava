@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="ContentDescription">
+
+    <ImageView
+        android:id="@+id/bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha=".4"
+        android:scaleType="centerCrop"
+        android:src="@drawable/sp" />
+
+    <ImageView
+        android:id="@+id/anim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:alpha=".9"
+        android:scaleType="centerCrop" />
+
+    <RelativeLayout
+        android:id="@+id/h"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:fitsSystemWindows="true">
+
+        <ImageView
+            android:id="@+id/ic"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignTop="@+id/title"
+            android:layout_marginTop="-30dp"
+            android:padding="15dp"
+            android:src="@drawable/sp1"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/title"
+            android:layout_alignTop="@+id/title"
+            android:layout_marginTop="-10dp"
+            android:alpha="0"
+            android:fontFamily="cursive"
+            android:paddingStart="10dp"
+            android:scaleY="0"
+            android:text="Welcome to"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/ic"
+            android:padding="10dp"
+            android:text="@string/app_name"
+            android:textColor="@android:color/white"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
+        <View
+            android:id="@+id/tu"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/title"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="-5dp"
+            android:layout_marginEnd="15dp"
+            android:background="@android:color/white" />
+
+        <k.ui.g
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/btns"
+            android:layout_below="@+id/title"
+            android:gravity="center"
+            android:horizontalSpacing="20dp"
+            android:padding="10dp"
+            android:verticalSpacing="20dp" />
+
+        <TextView
+            android:id="@+id/up_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btns"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="-8dp"
+            android:scaleY="-.5"
+            android:text="^"
+            android:textColor="@android:color/white"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
+        <Button
+            android:id="@+id/launchApp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btns"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/kbtn"
+            android:onClick="onClick"
+            android:padding="15dp"
+            android:text="@string/launch_app"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/btns"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#3fff"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <ImageButton
+                android:id="@+id/more_apps"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:onClick="onClick"
+                android:scaleType="fitCenter"
+                android:src="@drawable/apps"
+                android:tint="@color/colorAccent" />
+
+            <ImageButton
+                android:id="@+id/info"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:onClick="onClick"
+                android:scaleType="fitCenter"
+                android:src="@drawable/info"
+                android:tint="@color/colorAccent" />
+
+            <ImageButton
+                android:id="@+id/app_drawer"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:onClick="onClick"
+                android:scaleType="fitCenter"
+                android:src="@drawable/app_drawer"
+                android:tint="@color/colorAccent"
+                android:visibility="gone" />
+
+            <ImageButton
+                android:id="@+id/rate_app"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:onClick="onClick"
+                android:scaleType="fitCenter"
+                android:src="@drawable/star"
+                android:tint="@color/colorAccent" />
+
+            <ImageButton
+                android:id="@+id/share_app"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:onClick="onClick"
+                android:scaleType="fitCenter"
+                android:scaleX="-1"
+                android:src="@drawable/reply" />
+        </LinearLayout>
+
+        <include
+            android:id="@+id/first_launch"
+            layout="@layout/tips"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/title"
+            android:layout_alignBottom="@+id/btns"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/tips_view"
+        layout="@layout/tip_view"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/r"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:scaleX=".3"
+        android:scaleY=".3">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/srila_prabhupada"
+            android:scaleType="centerCrop"
+            android:src="@drawable/sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:padding="10dp"
+            android:shadowColor="@android:color/holo_red_light"
+            android:shadowDx="0.0"
+            android:shadowDy="0.0"
+            android:shadowRadius="8"
+            android:text="@string/dedication"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="serif" />
+    </FrameLayout>
+</RelativeLayout>

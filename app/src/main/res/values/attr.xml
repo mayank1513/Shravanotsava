@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="d">
+        <attr name="android:layout_width" format="dimension" />
+        <attr name="android:layout_gravity" format="integer" />
+        <attr name="android:background" format="reference|color"/>
+        <attr name="shadowing_background" format="reference|color"/>
+        <attr name="animated_arte" format="reference"/>
+        <attr name="onRightEdge" format="boolean"/>
+        <attr name="sensitivity" format="float"/>
+        <attr name="direction_sensitivity" format="float"/>
+    </declare-styleable>
+    <!--<declare-styleable name="r">
+        <attr name="animated_arte1" format="reference"/>
+    </declare-styleable>-->
+</resources>

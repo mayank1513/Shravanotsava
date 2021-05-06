@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/left_"
+        android:layout_width="47dp"
+        android:layout_height="match_parent"
+        android:background="#000">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:alpha=".3"
+            android:text="@string/hk_spaced"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/right_"
+        android:layout_width="47dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:background="#000">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:alpha=".3"
+            android:text="@string/hk_spaced"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/hk__"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:layout_alignParentBottom="true"
+        android:alpha="0"
+        android:background="@android:color/holo_red_dark"
+        android:lineSpacingMultiplier="1.2"
+        android:padding="4dp"
+        android:text="@string/mahamantra1"
+        android:textAlignment="center"
+        android:textColor="#b2ff59"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <include
+        android:id="@+id/h"
+        layout="@layout/h"
+        android:alpha="0" />
+
+    <include
+        android:id="@+id/pref"
+        layout="@layout/ip"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <k.ui.g
+        android:id="@+id/s_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray" />
+
+    <include
+        android:id="@+id/tips_view"
+        layout="@layout/tip_view"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/updatingDb"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_centerInParent="true"
+        android:alpha="0"
+        android:padding="1dp"
+        android:scaleType="fitCenter" />
+</RelativeLayout>

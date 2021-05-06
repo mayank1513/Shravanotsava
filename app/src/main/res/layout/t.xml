@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/t_bar_height"
+    android:orientation="horizontal"
+    android:id="@+id/t"
+    android:onClick="onClick"
+    android:background="@color/toolBarColor"
+    android:layout_marginTop="24dp"
+    android:tint="@android:color/white">
+
+    <ImageButton
+        android:id="@+id/drawer_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/t_bar_height"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="5dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClick"
+        android:src="@drawable/drawer"
+        android:tint="@android:color/white"
+        android:contentDescription="@string/drawer_button" />
+
+    <TextView
+        android:id="@+id/app_name"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:fontFamily="cursive"
+        android:gravity="bottom"
+        android:onClick="onClick"
+        android:paddingBottom="14dp"
+        android:singleLine="true"
+        android:text="@string/app_name"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <ImageButton
+        android:id="@+id/invertColor"
+        android:layout_width="24dp"
+        android:layout_height="@dimen/t_bar_height"
+        android:layout_marginEnd="12dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClick"
+        android:src="@drawable/invert_colors"
+        android:tint="@android:color/white"
+        android:visibility="gone"
+        android:contentDescription="@string/invert_color" />
+
+    <ImageButton android:id="@+id/search"
+        android:layout_width="55dp"
+        android:layout_height="@dimen/t_bar_height"
+        android:layout_marginEnd="8dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClick"
+        android:src="@drawable/search"
+        android:tint="@android:color/white"
+        android:contentDescription="@string/search" />
+
+    <ImageButton
+        android:id="@+id/vedabasebtn"
+        android:layout_width="30dp"
+        android:layout_height="@dimen/t_bar_height"
+        android:background="@android:color/transparent"
+        android:onClick="onClick"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/sp1"
+        android:contentDescription="@string/open_vedabase" />
+
+    <ImageButton
+        android:id="@+id/menu"
+        android:layout_width="65dp"
+        android:layout_height="@dimen/t_bar_height"
+        android:background="@android:color/transparent"
+        android:onClick="onClick"
+        android:src="@drawable/more"
+        android:tint="@android:color/white"
+        android:contentDescription="@string/menu" />
+</LinearLayout>

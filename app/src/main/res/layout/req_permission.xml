@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/permissions"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@android:color/holo_blue_dark">
+
+    <ImageButton
+        android:src="@drawable/info"
+        android:tint="#6aaa"
+        android:layout_margin="5dp"
+        android:id="@+id/info_logo_"
+        android:background="@drawable/ripple"
+        android:scaleType="fitCenter"
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
+
+    <TextView
+        android:id="@+id/req"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/info_logo_"
+        android:text="@string/req_permission_info"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/request_permission"
+        android:layout_below="@+id/req"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:checked="true"
+        android:text="@string/grant_permission" />
+
+</RelativeLayout>

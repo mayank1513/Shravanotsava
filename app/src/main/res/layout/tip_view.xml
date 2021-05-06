@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tips_view"
+    android:background="#8000"
+    android:onClick="onClick"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/f"
+        android:background="@android:color/transparent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/rp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <TextView android:id="@+id/tip"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:text="Hare Krishna"
+        android:padding="10dp"
+        android:textSize="22sp"
+        android:background="@drawable/rect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ImageView android:id="@+id/pointer"
+        android:scaleType="fitCenter"
+        android:alpha="0"
+        android:src="@drawable/touch"
+        android:layout_gravity="center"
+        android:tint="@android:color/white"
+        android:layout_width="60dp"
+        android:layout_height="60dp" />
+    <ImageView android:id="@+id/arrow"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:alpha="0"
+        android:src="@drawable/arrow_tail"
+        android:layout_gravity="end"
+        android:tint="#bbD81B60"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <TextView android:layout_gravity="bottom"
+        android:drawableStart="@drawable/info"
+        android:padding="5dp"
+        android:drawableTint="#aaa"
+        android:text="@string/tip_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button android:id="@+id/close_tip"
+        android:background="@android:color/holo_blue_dark"
+        android:textColor="@android:color/white"
+        android:text="@string/close"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="50dp"
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</FrameLayout>

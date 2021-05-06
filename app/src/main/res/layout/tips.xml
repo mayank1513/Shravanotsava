@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:ignore="RtlCompat">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tag_line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="cursive"
+            android:padding="10dp"
+            android:text="@string/tag_line"
+            android:textAlignment="textStart"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="italic" />
+
+        <FrameLayout
+            android:id="@+id/board"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:minHeight="160dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/rect"
+                android:fontFamily="casual"
+                android:rotation="-30"
+                android:rotationX="-15"
+                android:text="@string/sp_books"
+                android:textAlignment="center"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/rect"
+                android:fontFamily="casual"
+                android:rotationX="-15"
+                android:text="@string/srila_prabhupada_quotes"
+                android:textAlignment="center"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="-5dp"
+                android:background="@drawable/rect"
+                android:fontFamily="casual"
+                android:text="@string/chant_with_prabhupada"
+                android:textAlignment="center"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/rect"
+                android:fontFamily="casual"
+                android:rotationY="30"
+                android:text="@string/kirtans"
+                android:textAlignment="center"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="70dp"
+                android:layout_marginEnd="50dp"
+                android:background="@drawable/rect"
+                android:fontFamily="casual"
+                android:rotation="65"
+                android:rotationX="15"
+                android:text="@string/bhajans"
+                android:textAlignment="center"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rect"
+                android:fontFamily="casual"
+                android:rotation="15"
+                android:rotationX="15"
+                android:text="@string/discourses"
+                android:textAlignment="center"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/short_intro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="monospace"
+            android:padding="10dp"
+            android:text="@string/short_into"
+            android:textAlignment="textStart"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+        <include layout="@layout/accept_terms" />
+
+        <Button
+            android:id="@+id/start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-5dp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:onClick="onClick"
+            android:padding="18dp"
+            android:text="@string/start"
+            android:textStyle="bold" />
+    </LinearLayout>
+</ScrollView>

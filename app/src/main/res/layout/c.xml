@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <k.ui.h
+        android:id="@+id/x"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/t_bar_height"
+            android:background="@color/toolBarColor"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" />
+    </k.ui.h>
+
+    <k.ui.h
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/x"
+        android:layout_marginTop="-3.5dp">
+
+        <FrameLayout
+            android:id="@+id/dividerContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="4dp">
+
+            <View
+                android:layout_width="30000dp"
+                android:layout_height="match_parent" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/holo_blue_dark" />
+        </FrameLayout>
+    </k.ui.h>
+
+    <k.ui.g
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/x"
+        android:fastScrollEnabled="false"
+        android:listSelector="@android:color/transparent" />
+    <!--android:scrollbarStyle="insideInset"-->
+</RelativeLayout>

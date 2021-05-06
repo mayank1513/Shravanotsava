@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/popup"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:padding="3dp"
+    tools:ignore="ContentDescription">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/kbtn"
+        android:backgroundTint="#a000"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <ImageButton
+                android:id="@+id/shuffle_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:onClick="onClick"
+                android:src="@drawable/shuffle"
+                android:tint="#FA8713" />
+
+            <ImageButton
+                android:id="@+id/send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:onClick="onClick"
+                android:src="@drawable/send"
+                android:tint="#FA8713" />
+
+            <ImageButton
+                android:id="@+id/sort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:onClick="onClick"
+                android:src="@drawable/sort"
+                android:tint="#FA8713" />
+
+            <ImageButton
+                android:id="@+id/filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:onClick="onClick"
+                android:src="@drawable/filter"
+                android:tint="#FA8713" />
+
+            <ImageButton
+                android:id="@+id/preferences_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:onClick="onClick"
+                android:src="@drawable/setting"
+                android:tint="#FA8713" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/pl_chant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="8dp"
+            android:onClick="onClick"
+            android:text="@string/please_chant"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/mahamantra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="5dp"
+            android:onClick="onClick"
+            android:text="@string/mahamantra"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!--<TextView android:id="@+id/add_bookmark"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:onClick="onClick"-->
+        <!--android:text="@string/add_bookmark"-->
+        <!--android:textSize="18sp" />-->
+
+        <!--<TextView android:id="@+id/bookmarks"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:onClick="onClick"-->
+        <!--android:text="@string/bookmarks"-->
+        <!--android:textSize="18sp" />-->
+
+        <TextView
+            android:id="@+id/share_app"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:onClick="onClick"
+            android:text="@string/share_application"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/rate_app"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:onClick="onClick"
+            android:text="@string/rate_application"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/feedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:onClick="onClick"
+            android:text="@string/feedback_suggestions"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/buybooks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:onClick="onClick"
+            android:text="@string/buy_books"
+            android:textSize="18sp" />
+        <!--<TextView-->
+        <!--android:id="@+id/feedback"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:clickable="true"-->
+        <!--android:text="Share Feedback"-->
+        <!--android:textSize="18sp" />-->
+        <!--        <TextView android:id="@+id/daily_nectar"-->
+        <!--            android:visibility="gone"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_margin="10dp"-->
+        <!--            android:onClick="onClick"-->
+        <!--            android:text="@string/daily_nectar"-->
+        <!--            android:textSize="18sp" />-->
+        <TextView
+            android:id="@+id/prabhupada_audio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:onClick="onClick"
+            android:text="@string/prabhupada_vani"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/chant_with_prabhupada"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="34dp"
+                android:layout_marginBottom="10dp"
+                android:onClick="onClick"
+                android:singleLine="true"
+                android:text="@string/chant_with_prabhupada"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/stop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/ripple"
+                android:onClick="onClick"
+                android:src="@drawable/stop"
+                android:tint="#FA8713" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/prabhupada_today"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:onClick="onClick"
+            android:text="@string/srila_prabhupada_today"
+            android:textSize="18sp" />
+    </LinearLayout>
+</ScrollView>

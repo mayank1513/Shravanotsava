@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/t_bar_height"
+    android:orientation="horizontal"
+    android:id="@+id/t"
+    android:onClick="onClick"
+    android:background="@color/toolBarColor"
+    android:layout_marginTop="24dp"
+    android:tint="@android:color/white">
+
+    <ImageButton android:id="@+id/back"
+        android:layout_width="24dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="13dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClick"
+        android:src="@drawable/bk"
+        android:tint="@android:color/white" />
+
+    <EditText
+        android:id="@+id/search_view"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:hint="@string/type_query"
+        android:imeOptions="actionSearch|flagNoExtractUi"
+        android:singleLine="true"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:inputType="text" />
+
+    <ImageButton
+        android:id="@+id/clearSearch"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="8dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClick"
+        android:scaleType="fitCenter"
+        android:src="@drawable/x" />
+
+    <ImageButton
+        android:id="@+id/searchSettings"
+        android:visibility="gone"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="-13dp"
+        android:layout_gravity="center_vertical"
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"
+        android:onClick="onClick"
+        android:src="@android:drawable/ic_search_category_default"
+        android:tint="@android:color/white" />
+    <ImageView android:visibility="gone"
+        android:id="@+id/sSettings"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="5dp"
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"
+        android:src="@drawable/setting" />
+</LinearLayout>

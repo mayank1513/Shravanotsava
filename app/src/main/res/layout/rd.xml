@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<k.ui.d xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rd"
+    app:onRightEdge="true"
+    android:background="@drawable/rect"
+    android:layout_height="match_parent"
+    android:layout_width="@dimen/r_drawer_width">
+    <!--<View-->
+        <!--android:layout_width="@dimen/r_drawer_width"-->
+        <!--android:layout_height="@dimen/tool_bar_height"-->
+        <!--android:background="@color/statusBarColor"/>-->
+    <!--<View-->
+        <!--android:background="@color/colorPrimary"-->
+        <!--android:layout_marginTop="@dimen/tool_bar_height"-->
+        <!--android:layout_width="@dimen/r_drawer_width"-->
+        <!--android:layout_height="3000dp"/>-->
+    <TextView android:id="@+id/rd_title"
+        android:onClick="onClick"
+        android:layout_width="@dimen/r_drawer_width"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:drawableStart="@drawable/bookmark"
+        android:drawableEnd="@drawable/music_q"
+        android:fontFamily="serif"
+        android:paddingStart="10dp"
+        android:paddingEnd="35dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text=" Bookmarks"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        android:typeface="serif" />
+
+    <ImageButton
+        android:id="@+id/add_bookmark"
+        android:onClick="onClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/ripple"
+        android:src="@drawable/add"
+        android:padding="5dp"
+        android:rotationY="180" />
+
+    <ImageButton android:id="@+id/cut"
+        android:visibility="gone"
+        android:onClick="onClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/music_note"
+        android:backgroundTint="@color/colorAccent"
+        android:padding="5dp"
+        android:tint="#0000F0"
+        android:src="@drawable/cut" />
+
+    <k.ui.g android:id="@+id/rd_list"
+        android:layout_width="@dimen/r_drawer_width"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="@dimen/t_bar_height"
+        android:layout_height="wrap_content" />
+</k.ui.d>

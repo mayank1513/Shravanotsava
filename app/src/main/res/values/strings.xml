@@ -1,0 +1,110 @@
+<resources>
+    <string name="mahamantra">Hare Kṛṣṇa Hare Kṛṣṇa\nKṛṣṇa Kṛṣṇa Hare Hare\nHare Rāma Hare Rāma\nRāma Rāma Hare Hare</string>
+    <string name="mahamantra1">Hare Kṛṣṇa Hare Kṛṣṇa Kṛṣṇa Kṛṣṇa Hare Hare\nHare Rāma Hare Rāma Rāma Rāma Hare Hare</string>
+    <string name="srila_prabhupada">Śrīla Prabhupāda</string>
+    <string name="dedication">Dedicated\n\nto\n\nHis Divine Grace\nA. C. Bhakti Vedānta Swamī Prabhupāda\n\nFounder Ācharya of ISKCON</string>
+
+    <string name="share_as_img">Share</string>
+    <string name="song_volume">Song Volume\n %1$d %% </string>
+    <string name="device_volume">Device Volume\n %1$d %% </string>
+    <string name="type_query">type query</string>
+    <string name="search">Search</string>
+    <string name="open_vedabase">Open Vedabase</string>
+    <string name="menu">Menu</string>
+    <string name="invert_color">Invert Color</string>
+    <string name="drawer_button">Drawer Button</string>
+    <string name="album_arte">Album Arte</string>
+    <string name="play_pause_button">play pause button</string>
+    <string name="about">about</string>
+    <string name="please_chant">Please Chant…</string>
+    <string name="add_bookmark">Add Bookmark</string>
+    <string name="bookmarks">Bookmarks</string>
+    <string name="share_application">Share Application</string>
+    <string name="rate_application">Rate Application</string>
+    <string name="feedback_suggestions">Feedback/Suggestions</string>
+    <string name="daily_nectar">Daily Nectar</string>
+    <string name="chant_with_prabhupada">Chant with Prabhupāda</string>
+    <string name="srila_prabhupada_today">Śrīla Prabhupāda Today</string>
+    <string name="contribute">Contribute</string>
+    <string name="workingonit">Working on it…</string>
+    <string name="thank_you">Thank You</string>
+    <string name="fix_chant">Error Playing Chant…\n\nPlease connect phone to internet and try again. We will try fixing error\n\nNo data collected… we will re-download necessary files.</string>
+    <string name="sp_quotes">Śrīla Prabhupāda Quotes</string>
+    <string name="sp">srila-prabhupada-vani.github.io</string>
+    <string name="rns">radhanatha-swami.github.io</string>
+    <string name="rgs">Radha-Govind-Das-Goswami-Maharaj.github.io</string>
+    <string name="lks">lokanatha-swami.github.io</string>
+    <string name="bsrm">bhaktirasamrita-swami.github.io</string>
+    <string name="bcs">bhakticharu-swami.github.io</string>
+    <string name="bps">bhaktiprema-swami.github.io</string>
+    <string name="ds">devamrita-swami.github.io</string>
+    <string name="gkg">gopalkrishna-goswami.github.io</string>
+    <string name="mvg">mahavishnu-goswami.github.io</string>
+    <string name="bnds">badarinarayandasa-goswami.github.io</string>
+    <string name="bsds">bhaktiswarupdmodara-swami.github.io</string>
+    <string name="rps">romapada-swami.github.io</string>
+    <string name="kkp">kundalkrishna-prabhu.github.io</string>
+    <string name="dnp">devakinandan-prabhu.github.io</string>
+    <string name="setting_up">Setting Up…</string>
+    <string name="tag_line">A simple yet elegant way to stay connected with Srila Prabhupada and Divine Consciousness.</string>
+    <string name="short_into">We heartily thank you for accepting our service. \n\nWith Śravaṇotsava App, you have access to vast collection of Śrīla Prabhupāda\'s lectures and kirtans,
+        Śrīla Prabhupāda\'s Books, Śrīla Prabhupāda\'s daily quotes as well as Lectures and Kirtans by ISKCON devotees.</string>
+    <string name="discover_the_app_with_screen_tips">Discover the app with screen tips…</string>
+    <string name="screen_tip">A tip is shown <b>only once</b> when a funciton is used for the first time. In the beginning there will be lot of tips coming up. They will help you quickly understand and utilize the app.</string>
+    <string name="sp_books">Śrīla Prabhupāda\nBooks</string>
+    <string name="start">Start</string>
+    <string name="kirtans">Kirtans</string>
+    <string name="srila_prabhupada_quotes">Śrīla Prabhupāda\nQuotes</string>
+    <string name="bhajans">Bhajans</string>
+    <string name="discourses">Discourses</string>
+    <string name="close">Close</string>
+    <string name="tip_note">This tip will not be shown again. You can restart screen tips from settings.</string>
+    <string name="loading">Loading…</string>
+    <string name="show_lyrics">Show Lyrics</string>
+    <string name="hk_spaced">H\na\nr\ne\n\nK\nṛ\nṣ\nṇ\na</string>
+    <string name="msg_for_sharing_app">Default text for sharing app</string>
+    <string name="msg_for_sharing_song">Default text for sharing song</string>
+    <string name="background">Background</string>
+    <string name="background_preview">background preview</string>
+    <string name="alpha">Alpha:</string>
+    <string name="red">Red:</string>
+    <string name="green">Green:</string>
+    <string name="blue">Blue:</string>
+    <string name="done">Done</string>
+    <string name="on_shake">On Shake</string>
+    <string name="show_fab">Show FAB</string>
+    <string name="padding_for_nav">Bottom Padding for navigation buttons</string>
+    <string name="change_background_with_album">Change background with album</string>
+    <string name="offline_vedabase">Offline Vedabase</string>
+    <string name="offline_vb_intro">Enabling offline vedabase will save data. Some of the online features will not be available.  Please note that offline storage builds as you access vedabase. Not all pages are available offline.</string>
+    <string name="when_becoming_noisy_removing_headphones">When Becoming Noisy (Removing headphones)</string>
+    <string name="notification">Notification</string>
+    <string name="bsrm_nactar">Bhakti Rasamrita Swami Daily Nectar</string>
+    <string name="sp_quote">Srila Pabhupada\'s Daily Quote</string>
+    <string name="storage">Storage</string>
+    <string name="preferences">Preferences</string>
+    <string name="general">General</string>
+    <string name="connect_error">Error connecting to the Server</string>
+    <string name="cant_go_further">Can not go further</string>
+    <string name="open_in_yt">Opening current page in YouTube Application\n\nPlease subscribe to the Channel</string>
+    <string name="set_time">Set Time</string>
+    <string name="launch_app">Launch App</string>
+    <string name="buy_books">💖 Buy Books 💖</string>
+    <string name="accept">Accept</string>
+    <string name="terms">By using this app you agree to our <a href='https://krishna-apps.github.io/Shravanotsava/#terms'>Terms of Service</a>
+        and <a href='https://krishna-apps.github.io/Shravanotsava/#privacy'>Privacy Policy</a>. In addition, you also acknowledge
+        that this app will download required resources and data in order to provide you our service.
+        \n\nIf you do not agree to these terms of service and privacy policy, you may not use our app.
+    </string>
+    <string name="accept_to_continue">"You must accept Terms of Service and Privacy Policy in order to continue using our services."</string>
+    <string name="restart_screen_tips">Restart Screen Tips</string>
+    <string name="req_permission_info">This app stores data locally on your device. It is necessary to grant the permission to access device storage for app to function normally.  We need your permission to access device storage.</string>
+    <string name="grant_permission">Grant Permission</string>
+    <string name="ok">Ok</string>
+    <string name="swipe_up_to_expand">You can swipe up to expand controls.</string>
+    <string name="prabhupada_vani">Prabhupada Vani</string>
+    <string-array name="tips">
+        <item>Tap to open library.</item>
+        <item>Swipe up to reveal app icons</item>
+    </string-array>
+</resources>

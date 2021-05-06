@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mahāvishnu Goswāmi</string>
+    <string name="short_name">mvg</string>
+    <string name="intro">Mahāvishnu Goswāmi App is collection of kirtans, Vaishnava Bhajans  and lectures on Bhagavad Gita, Srimada Bhagavatam, Chaitanya Charitamrita and more by His Holiness Mahāvishnu Goswāmi Maharaja.\n
+        Mahāvishnu Goswāmi is a Vaishnava sanyassi (a monk in a Krishna-bhakti lineage) connecte to ISKCON and teacher of the devotional path of Bhakti-yoga. </string>
+    <string name="git">radhanatha-swami.github.io</string>
+    <string name="short_into">With Mahāvishnu Goswāmi App, you have access to vast collection of His Holiness Mahāvishnu Goswāmi\'s lectures and kirtans,
+        Śrīla Prabhupāda\'s Books, Śrīla Prabhupāda\'s daily quotes.</string>
+</resources>

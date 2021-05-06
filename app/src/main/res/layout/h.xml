@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/h"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alpha="0"
+    android:background="#000"
+    tools:ignore="ContentDescription">
+
+    <ImageView
+        android:id="@+id/f_arte"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <ImageView
+        android:id="@+id/c_foreground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/cf"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/t_arte"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/t_bar_height">
+
+        <ImageView
+            android:id="@+id/arte"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/sp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/c_grad"
+            android:tint="@color/toolBarColor" />
+    </FrameLayout>
+
+    <k.ui.t
+        android:id="@+id/tl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_drawer"
+        android:layout_below="@+id/t"
+        android:layout_marginBottom="-8dp"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/volumeControls"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <View
+            android:id="@+id/songVolume"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginBottom="150dp"
+            android:alpha=".2"
+            android:background="@drawable/bg_bottom_grad"
+            android:backgroundTint="@color/colorPrimary" />
+
+        <View
+            android:id="@+id/deviceVolume"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom|end"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="150dp"
+            android:alpha=".2"
+            android:background="@drawable/bg_bottom_grad"
+            android:backgroundTint="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/percent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0"
+            android:background="#B000"
+            android:gravity="center"
+            android:text="100 %"
+            android:textColor="#ffffff"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fs_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/t_bar_height"
+        android:layout_marginTop="24dp"
+        android:onClick="onClick"
+        android:padding="10dp"
+        android:visibility="gone">
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#0000"
+            android:onClick="onClick"
+            android:src="@drawable/bk"
+            android:tint="@android:color/white" />
+
+        <ImageButton
+            android:id="@+id/f_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="#0000"
+            android:onClick="onClick"
+            android:src="@drawable/more"
+            android:tint="@android:color/white" />
+    </FrameLayout>
+
+    <ImageButton
+        android:id="@+id/info"
+        android:layout_width="24dp"
+        android:layout_height="25dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:alpha="0"
+        android:background="@drawable/c3"
+        android:contentDescription="@string/about"
+        android:onClick="onClick"
+        android:scaleType="fitCenter"
+        android:src="@drawable/info"
+        android:visibility="gone" />
+
+    <ImageButton
+        android:id="@+id/action"
+        android:layout_width="50dp"
+        android:layout_height="51dp"
+        android:layout_above="@+id/bottom_drawer"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/c3"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/g"
+        android:tint="#f00"
+        android:visibility="gone" />
+
+    <k.ui.b
+        android:id="@+id/bottom_drawer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/musicControlHeight"
+        android:layout_above="@+id/xy"
+        android:visibility="gone" />
+
+    <k.ui.r
+        android:id="@+id/youtubeContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/status_bar"
+        android:layout_marginTop="-245dp"
+        android:visibility="gone">
+
+        <k.ui.CustomWebView
+            android:id="@+id/youtube_web_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:id="@+id/toolbarYt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="#801FFF30"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/forward"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:onClick="onClick"
+                android:src="@drawable/forward"
+                android:tint="@color/colorAccent" />
+
+            <ImageButton
+                android:id="@+id/send"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:onClick="onClick"
+                android:src="@drawable/send"
+                android:tint="@color/colorAccent" />
+
+            <ImageButton
+                android:id="@+id/about"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:onClick="onClick"
+                android:src="@drawable/info"
+                android:tint="@color/colorAccent" />
+
+            <ImageButton
+                android:id="@+id/open_in_yt"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:onClick="onClick"
+                android:scaleX="1.8"
+                android:scaleY="1.8"
+                android:src="@drawable/yt" />
+
+            <ImageButton
+                android:id="@+id/refresh"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:onClick="onClick"
+                android:src="@drawable/refresh"
+                android:tint="@color/colorAccent" />
+        </LinearLayout>
+    </k.ui.r>
+
+    <include
+        android:id="@+id/t"
+        layout="@layout/t" />
+
+    <include
+        android:id="@+id/s"
+        layout="@layout/s"
+        android:visibility="gone" />
+
+    <k.ui.r
+        android:id="@+id/vedabase_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/vedabase_top_margine"
+        android:visibility="gone">
+
+        <k.ui.CustomWebView
+            android:id="@+id/veda_web_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp" />
+
+        <k.ui.CustomWebView
+            android:id="@+id/notes_web_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp" />
+
+        <LinearLayout
+            android:id="@+id/toolbar2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="#801FFF30"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/goForward"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="onClick"
+                android:src="@drawable/forward"
+                android:tint="@color/colorAccent" />
+
+            <ImageButton
+                android:id="@+id/goFullScreen"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="onClick"
+                android:src="@drawable/fullscreen"
+                android:tint="@color/colorAccent" />
+
+            <ImageButton
+                android:id="@+id/fab_notes"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="onClick"
+                android:padding="3dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/sp1" />
+
+            <ImageButton
+                android:id="@+id/fab_close"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="onClick"
+                android:src="@drawable/x"
+                android:tint="@color/colorAccent" />
+
+            <ImageButton
+                android:id="@+id/reload"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="onClick"
+                android:src="@drawable/refresh"
+                android:tint="@color/colorAccent" />
+        </LinearLayout>
+    </k.ui.r>
+
+    <include
+        layout="@layout/rd"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/status_bar" />
+
+    <FrameLayout
+        android:id="@+id/status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:background="@color/toolBarColor">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#3000" />
+    </FrameLayout>
+
+    <include layout="@layout/d" />
+
+    <View
+        android:id="@+id/hari"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:background="@drawable/bg_bottom_grad" />
+
+    <k.ui.g
+        android:id="@+id/fs_menu"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/status_bar"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        android:background="@android:color/transparent"
+        android:divider="@null" />
+
+    <ImageButton
+        android:id="@+id/quickBall"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="-20dp"
+        android:layout_marginTop="300dp"
+        android:background="@drawable/c3"
+        android:backgroundTint="@color/colorPrimary"
+        android:onClick="onClick"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/sp1" />
+
+    <include
+        android:id="@+id/iq"
+        layout="@layout/iq"
+        android:layout_width="152dp"
+        android:layout_height="152dp"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/lm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/xy"
+        android:alpha="0"
+        android:background="#ee00574B"
+        android:translationY="200dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/i"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:text="@string/app_name"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/i1"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/info"
+                android:tint="@android:color/white" />
+        </LinearLayout>
+
+        <k.ui.g
+            android:id="@+id/ml"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:padding="5dp" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/xy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/holo_red_dark"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/toast"
+            android:layout_width="match_parent"
+            android:layout_height=".0dp"
+            android:background="#070"
+            android:onClick="onClick"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/toast_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:padding="4dp"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/toast_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="4dp"
+                android:background="@drawable/kbtn"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

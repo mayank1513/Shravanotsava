@@ -1,0 +1,25 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Holo.NoActionBar.TranslucentDecor">
+        <item name="android:fastScrollThumbDrawable">@drawable/fast_scroll</item>
+        <!--<item name="android:fastScrollTrackDrawable">@android:color/transparent</item>-->
+        <item name="android:fastScrollOverlayPosition">atThumb</item>
+        <item name="android:fastScrollPreviewBackgroundRight">@drawable/prev_latter_bg</item>
+        <item name="android:textColor">#b2ff59</item>
+        <item name="android:popupBackground">#000</item>
+    </style>
+    <style name="AppTheme.preview" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/haribol</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+    </style>
+
+    <style name="WindowAnimationTransition">
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+    <style name="Animation">
+        <item name="android:windowEnterAnimation">@anim/popup_show</item>
+        <item name="android:windowExitAnimation">@anim/popup_hide</item>
+    </style>
+</resources>

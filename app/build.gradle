@@ -1,0 +1,101 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    defaultConfig {
+        applicationId "com.mayank.krishnaapps"
+        minSdkVersion 19
+        targetSdkVersion 30
+        versionCode 6
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    flavorDimensions "default" //, "store"
+    productFlavors {
+        shravanotsava {
+            dimension "default"
+            applicationIdSuffix ".shravanotsava"
+            buildConfigField("int", "QR", "21")
+        }
+        rns {
+            dimension "default"
+            applicationIdSuffix ".radhanathswami"
+//            applicationIdSuffix ".rns"
+            buildConfigField("int", "QR", "22")
+        }
+        lks {
+            dimension "default"
+            applicationIdSuffix ".lokanathswami"
+//            applicationIdSuffix ".lks"
+            buildConfigField("int", "QR", "23")
+        }
+        mvg {
+            dimension "default"
+            applicationIdSuffix ".mvg"
+            buildConfigField("int", "QR", "24")
+        }
+        bcs {
+            dimension "default"
+            applicationIdSuffix ".bcs"
+            buildConfigField("int", "QR", "25")
+        }
+        bsds {
+            dimension "default"
+            applicationIdSuffix ".bsds"
+            buildConfigField("int", "QR", "26")
+        }
+        dnp {
+            dimension "default"
+            applicationIdSuffix ".dnp"
+            buildConfigField("int", "QR", "27")
+        }
+        gp {
+            dimension "default"
+            applicationIdSuffix ".gp"
+            buildConfigField("int", "QR", "28")
+        }
+        rgs {
+            dimension "default"
+            applicationIdSuffix ".rgs"
+//            applicationIdSuffix ".rns"
+            buildConfigField("int", "QR", "29")
+        }
+//        amzn {
+//            dimension "store"
+//        }
+//        play {
+//            dimension "store"
+//        }
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+    android.applicationVariants.all { variant ->
+        def mergedFlv = variant.getVariantData().getVariantConfiguration().getMergedFlavor()
+        def id = mergedFlv.getApplicationId() + mergedFlv.getApplicationIdSuffix()
+        def imgProviderAuthority = id + ".imgprovider"
+        mergedFlv.manifestPlaceholders = [id: id, imgProviderAuthority: imgProviderAuthority]
+        buildConfigField("String", "IMG_PROVIDER_AUTHORITY", "\"${imgProviderAuthority}\"")
+        buildConfigField("String", "ID", "\"${id}\"")
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.13'
+//    androidTestImplementation 'androidx.test:runner:1.2.0'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
