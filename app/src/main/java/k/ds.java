@@ -57,7 +57,7 @@ public class ds extends Service {
         appGit = new String[]{getString(R.string.sp), getString(R.string.rns), getString(R.string.rgs), getString(R.string.lks),
                 getString(R.string.bsrm), getString(R.string.mvg), getString(R.string.bcs), getString(R.string.bnds),
                 getString(R.string.bps), getString(R.string.bsds), getString(R.string.ds), getString(R.string.gkg),
-                getString(R.string.rps), getString(R.string.kkp), getString(R.string.dnp)};
+                getString(R.string.rps), getString(R.string.rsp), getString(R.string.kkp), getString(R.string.dnp)};
 
         baseDir = getExternalFilesDir("base");
         animDirLandScape = new File(baseDir + "/anim/l");

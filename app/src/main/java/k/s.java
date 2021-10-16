@@ -282,7 +282,6 @@ public class s extends Service {
                     startPlaying();
                 }
                 nowPlaying.volume = nowPlaying.volume >= MAX_VOLUME ? MAX_VOLUME - 1 : nowPlaying.volume;
-//                    TODO: write vol to database
                 float v = (float) (1 - (Math.log(MAX_VOLUME - nowPlaying.volume) / Math.log(MAX_VOLUME)));
                 mPlayer.setVolume(v, v);
             }, 500);

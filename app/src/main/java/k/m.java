@@ -71,12 +71,12 @@ import static k.k.vbDir;
 
 public class m extends Activity implements ds.CallBacks {
     static String[] apps = {"sp", "rns", "rgs", "lks", "bsrm", "mvg", "bcs", "bnds", "bps", "bsds", "ds", "gkg",
-            "rps", "kkp", "dnp"},
+            "rps", "rsp", "kkp", "dnp"},
             appNames = {"A C Bhakti Vedānta Swāmi", "Rādhānāth Swāmi", "Rādhā Govind Dās Goswāmi Mahārāj", "Lokanāth Swāmi", "Bhakti Rasāmrita Swāmi", "Mahavishnu Goswāmi",
                     "Bhakti Chāru Swāmi", "Badarinārāyana Dās Goswāmi", "Bhakti Prema Swāmi", "Bhakti Swarup Dāmodara Swāmi",
-                    "Devāmrita Swāmi", "Gopāl Krishna Goswāmi", "Romapāda Swāmi", "Kundal Krishna Prabhu", "Devakinandan Prabhu"},
-            appGit, appPrefixs = {"His Divine Grace", "", "", "", "", "", "", "", "", "", "", "", "His Grace", "His Grace"},
-            pkgs = {"com.mayank.srilaprabhupadavani", "", "", "", "", "", "", "", "", "", "", "", "", ""};
+                    "Devāmrita Swāmi", "Gopāl Krishna Goswāmi", "Romapāda Swāmi", "Rādhe Shyām Prabhu", "Kundal Krishna Prabhu", "Devakinandan Prabhu"},
+            appGit, appPrefixs = {"His Divine Grace", "", "", "", "", "", "", "", "", "", "", "", "His Grace", "His Grace", "His Grace"},
+            pkgs = {"com.mayank.srilaprabhupadavani", "", "", "", "", "", "", "", "", "", "", "", "", "", ""};
     final static String animRawBase = "https://raw.githubusercontent.com/shravanotsava/shravanotsava/master/a";
     static File animDirLandScape, animDirPortrait, baseDir;
     int[] scenes = {132, 148, 504, 1079, 1585, 2614, 3799, 4109};
@@ -96,7 +96,7 @@ public class m extends Activity implements ds.CallBacks {
         appGit = new String[]{getString(R.string.sp), getString(R.string.rns),  getString(R.string.rgs), getString(R.string.lks),
                 getString(R.string.bsrm), getString(R.string.mvg), getString(R.string.bcs), getString(R.string.bnds),
                 getString(R.string.bps), getString(R.string.bsds), getString(R.string.ds), getString(R.string.gkg),
-                getString(R.string.rps), getString(R.string.kkp), getString(R.string.dnp)};
+                getString(R.string.rps), getString(R.string.rsp), getString(R.string.kkp), getString(R.string.dnp)};
         AppTour = new TourData("app_tour").getWritableDatabase();
         getFrames();
         setContentView(R.layout.h1);
@@ -459,7 +459,7 @@ public class m extends Activity implements ds.CallBacks {
             String p = getPackageName();
             p = p.replace("radhanathswami", "rns").replace("lokanathswami", "lks");
             for (int i1 = 0; i1 < apps.length; i1++) {
-                if (p.contains(apps[i1])) {
+                if (p.endsWith("." + apps[i1])) {
                     launchApp(i1, null);
                     break;
                 }

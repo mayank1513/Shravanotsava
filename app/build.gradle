@@ -6,7 +6,7 @@ android {
         applicationId "com.mayank.krishnaapps"
         minSdkVersion 19
         targetSdkVersion 30
-        versionCode 6
+        versionCode 7
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -71,6 +71,11 @@ android {
             applicationIdSuffix ".rgs"
 //            applicationIdSuffix ".rns"
             buildConfigField("int", "QR", "29")
+        }
+        rsp {
+            dimension "default"
+            applicationIdSuffix ".rsp"
+            buildConfigField("int", "QR", "30")
         }
 //        amzn {
 //            dimension "store"

@@ -167,6 +167,14 @@
                     android:host="@string/kkp"
                     android:pathPattern=".*"
                     android:scheme="https" />
+                <data
+                    android:host="@string/rsp"
+                    android:pathPattern=".*"
+                    android:scheme="https" />
+                <data
+                    android:host="@string/rgs"
+                    android:pathPattern=".*"
+                    android:scheme="https" />
             </intent-filter>
         </activity>
 

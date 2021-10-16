@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingStart="5dp"
     android:paddingEnd="5dp"
-    android:paddingBottom="5dp"
+    android:paddingBottom="10dp"
     android:paddingTop="10dp"
     android:background="@drawable/rect1"
     android:descendantFocusability="blocksDescendants"
@@ -15,7 +15,7 @@
         android:layout_height="55dp"
         android:padding="2dp"
         android:background="@drawable/ripple_nomask"
-        android:layout_gravity="center_vertical"
+        android:layout_centerVertical="true"
         android:scaleType="centerCrop"
         android:src="@drawable/sp1" />
 
@@ -40,13 +40,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="59dp"
         android:layout_marginTop="3dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="55dp"
         android:fontFamily="serif"
         android:shadowColor="@android:color/holo_red_light"
         android:shadowDx="0.0"
         android:shadowDy="0.0"
         android:shadowRadius="8"
-        android:singleLine="true"
         android:textColor="@android:color/white"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -58,7 +58,7 @@
         android:drawableEnd="@android:drawable/arrow_down_float"
         android:padding="2dp"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="34dp"
+        android:layout_below="@+id/title"
         android:fontFamily="serif"
         android:shadowColor="@android:color/holo_red_light"
         android:shadowDx="0.0"
@@ -74,8 +74,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="115dp"
         android:layout_marginEnd="15dp"
-        android:layout_marginTop="40dp"
-        android:layout_gravity="end"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/title"
+        android:layout_alignParentEnd="true"
         android:justificationMode="inter_word"
         android:fontFamily="serif"
         android:shadowColor="@android:color/holo_red_light"
@@ -91,7 +92,7 @@
         android:layout_width="18dp"
         android:layout_height="18dp"
         android:scaleType="fitCenter"
-        android:layout_marginTop="5dp"
+        android:layout_alignTop="@+id/arte"
         android:layout_marginStart="37dp"
         android:alpha=".7"
         android:background="@drawable/ripple"
@@ -99,8 +100,9 @@
         android:tint="@color/colorAccent" />
 
     <LinearLayout android:orientation="horizontal"
-        android:layout_gravity="end"
-        android:layout_marginTop="5dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:paddingBottom="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <ImageButton
@@ -136,8 +138,32 @@
             android:paddingStart="2dp"
             android:tint="@color/colorAccent" />
     </LinearLayout>
+    <LinearLayout android:id="@+id/anim"
+        android:orientation="horizontal"
+        android:layout_height="10dp"
+        android:paddingEnd="10px"
+        android:layout_alignParentEnd="true"
+        android:visibility="gone"
+        android:gravity="bottom"
+        android:layout_width="wrap_content">
+        <View
+            android:layout_width="3dp"
+            android:layout_margin="1dp"
+            android:background="@color/colorAccent"
+            android:layout_height="match_parent"/>
+        <View
+            android:layout_width="3dp"
+            android:layout_margin="1dp"
+            android:background="@color/colorAccent"
+            android:layout_height="match_parent"/>
+        <View
+            android:layout_width="3dp"
+            android:layout_margin="1dp"
+            android:background="@color/colorAccent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
     <TextView android:id="@+id/type"
-        android:layout_gravity="end"
+        android:layout_alignParentEnd="true"
         android:layout_marginEnd="5dp"
         android:rotation="10"
         android:fontFamily="serif"
@@ -157,4 +183,4 @@
         android:layout_marginTop="65dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-</FrameLayout>
+</RelativeLayout>

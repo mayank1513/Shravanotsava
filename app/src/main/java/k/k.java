@@ -193,11 +193,13 @@ public class k extends Activity implements b.CallBacks, h.SyncedScrollInterface,
     static boolean[] creatingDb = new boolean[apps.length];
     CustomWebView VedabaseWebView, NotesWebView, YouTubeWebView;
     r vedabaseContainer, ytContainer;
+    String locale;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        locale = getResources().getConfiguration().locale.getCountry();
         syncedH.clear();
         tBarH = getResources().getDimensionPixelSize(R.dimen.t_bar_height);
         getWindowManager().getDefaultDisplay().getSize(size);
@@ -1929,7 +1931,7 @@ public class k extends Activity implements b.CallBacks, h.SyncedScrollInterface,
                 return;
             }
         }*/ else if (i == R.id.buybooks) {
-            startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://amzn.to/2BsTL4h")));
+            startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(locale.equals("IN") ? "https://amzn.to/2BsTL4h" : "https://amzn.to/3yMXKS0")));
         } else {
             String uriStr = "";
             if (i == R.id.fb) {
@@ -2468,7 +2470,7 @@ public class k extends Activity implements b.CallBacks, h.SyncedScrollInterface,
                                     YouTubeWebView.loadUrl("https://www.youtube.com/" + ytBase);
                                 break;
                             case "\uD83D\uDC96 Buy Books \uD83D\uDC96":
-                                startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://amzn.to/2BsTL4h")));
+                                startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(locale.equals("IN") ? "https://amzn.to/2BsTL4h" : "https://amzn.to/3yMXKS0")));
                                 break;
                             case "Song Book":
                                 showingLyrics = true;
@@ -2491,7 +2493,7 @@ public class k extends Activity implements b.CallBacks, h.SyncedScrollInterface,
                                 startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://play.google.com/store/apps/dev?id=5009060970068759882")));
                                 break;
                             case "About Us":
-                                startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://krishna-apps.web.app")));
+                                startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://krishna-apps.vercel.app/")));
                                 break;
                             case "Offline":
                             case "Favourites":
@@ -2772,6 +2774,7 @@ public class k extends Activity implements b.CallBacks, h.SyncedScrollInterface,
         AlphabetIndexer alphabetIndexer;
         Cursor mCursor;
         boolean gView = false;
+        ValueAnimator animator = new ValueAnimator();
 
         Adapter(Cursor c) {
             super(mContext, c, 0);
@@ -2932,6 +2935,32 @@ public class k extends Activity implements b.CallBacks, h.SyncedScrollInterface,
                     });
                 } else {
                     final Audio a = new Audio(cursor);
+                    if (nowPlaying.id.equals(a.id)) {
+                        view.setBackgroundColor(Color.BLUE);
+                        holder.anim.setVisibility(VISIBLE);
+                        animator.removeAllUpdateListeners();
+                        animator.setFloatValues(0, 1);
+                        animator.setDuration(1500);
+                        animator.addUpdateListener(animation -> {
+                            float fr = animation.getAnimatedFraction();
+                            for (int ix = 0; ix < 3; ix++) {
+                                float f1 = fr + ix * .33f;
+                                f1 = f1 > 1 ? f1 - 1 : f1;
+                                f1 = 2 * Math.abs(.5f - f1);
+                                ViewGroup.LayoutParams params = holder.animBars[ix].getLayoutParams();
+                                params.height = Math.round(10 * f1 * dp);
+                                holder.animBars[ix].setLayoutParams(params);
+//                                holder.animBars[ix].invalidate();
+//                                holder.animBars[ix].animate().setDuration(0).scaleY(f1).start();
+                            }
+                        });
+                        animator.setRepeatCount(ValueAnimator.INFINITE);
+                        animator.setInterpolator(new LinearInterpolator());
+                        animator.start();
+                    } else {
+                        holder.anim.setVisibility(GONE);
+                        view.setBackgroundColor(R.drawable.rect1);
+                    }
                     options = new String[]{"Play Next", "Add To", "Enqueue", "Ringtone",
                             "Trim", "Share", type == PlAudio ? "Remove From Playlist" : (a.offline ? "Delete" : "Download"), a.lang < 2 ? "Tag Lyrics" : "Set Text"};
                     icons = new int[]{R.drawable.play_next, R.drawable.add1, R.drawable.music_q, R.drawable.not, R.drawable.cut,
@@ -2942,6 +2971,7 @@ public class k extends Activity implements b.CallBacks, h.SyncedScrollInterface,
                     int lan = (int) decode(cursor.getString(cursor.getColumnIndex(LANG)).trim());
                     holder.lang.setText(lan < 0 ? "" : lang[lan][1]);
                     holder.like.setVisibility(VISIBLE);
+
                     if (a.fav) {
                         holder.like.setImageResource(R.drawable.thumb_pink);
                         holder.like.animate().scaleY(0.5f).scaleX(0.5f).rotation(-60).setDuration(0).start();
@@ -3217,6 +3247,8 @@ public class k extends Activity implements b.CallBacks, h.SyncedScrollInterface,
             TextView lang, ref;
             ImageButton like, menu, download;
             String id;
+            LinearLayout anim;
+            View[] animBars;
             int type = -1, l = -1;
 
             AlbHolder(View v) {
@@ -3228,6 +3260,8 @@ public class k extends Activity implements b.CallBacks, h.SyncedScrollInterface,
                 like = v.findViewById(R.id.like);
                 menu = v.findViewById(R.id.list_menu);
                 download = v.findViewById(R.id.download_);
+                anim = v.findViewById(R.id.anim);
+                animBars = new View[]{anim.getChildAt(0), anim.getChildAt(1), anim.getChildAt(2)};
             }
         }
     }
@@ -3406,6 +3440,7 @@ public class k extends Activity implements b.CallBacks, h.SyncedScrollInterface,
             } else if (action == MotionEvent.ACTION_UP) {
                 percent.animate().alpha(0).setDuration(500).start();
                 mVolumeControls.animate().setStartDelay(300).setDuration(500).alpha(.4f).start();
+//                TODO: Add volume to db
             }
             return true;
         }
@@ -3658,7 +3693,7 @@ public class k extends Activity implements b.CallBacks, h.SyncedScrollInterface,
                 a = new Audio(c);
                 File f = new File(audioDir, a.id), f1 = null;
                 String u = a.getUrl().replaceAll("&amp;", "%26");
-                mContext.runOnUiThread(() -> Toast.makeText(mContext, u, Toast.LENGTH_LONG).show());
+//                mContext.runOnUiThread(() -> Toast.makeText(mContext, u, Toast.LENGTH_LONG).show());
                 InputStream input = null;
                 OutputStream output = null;
                 HttpURLConnection connection = null;
@@ -3989,8 +4024,7 @@ public class k extends Activity implements b.CallBacks, h.SyncedScrollInterface,
                                         cursor.close();
                                         values.put(AUDIOS, audios);
                                         mDb.insert("hk" + i, null, values);
-                                    }
-                                    else {
+                                    } else {
                                         cursor.close();
                                         parent = "";
                                     }
